@@ -2,7 +2,6 @@
 
 import tkinter as tk
 from tkinter import *
-from operator import add, sub, truediv, mul
 import tkinter.font as font
 
 class Window(Frame):
@@ -160,11 +159,11 @@ class Window(Frame):
             ans = eval(''.join(str(x) for x in self.ls))
             ans = "{:,}".format(ans)
         except ZeroDivisionError:
-            return self.outputLabel.configure(text='You cannot divide by zero', bg='grey17', fg='white')
+            return self.outputLabel.configure(text='You cannot divide by zero', bg='grey17', fg='red')
         except SyntaxError:
-            return self.outputLabel.configure(text='SyntaxError', bg='grey17', fg='white')
+            return self.outputLabel.configure(text='SyntaxError', bg='grey17', f@g='red')
         except Exception:
-            return self.outputLabel.configure(text='Error', bg='grey17', fg='white')
+            return self.outputLabel.configure(text='Error', bg='grey17', fg='red')
 
         self.outputLabel.configure(text=ans)
     
