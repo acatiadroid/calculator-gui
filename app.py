@@ -10,7 +10,6 @@ class Window(Frame):
         Frame.__init__(self, master)
         self.master = master
         self.ls = []
-        self.operations = {"+": add, "-": sub, "/": truediv, "*": mul}
     
         self.pack(fill=BOTH, expand=1)
 
