@@ -153,7 +153,7 @@ class Window(Frame):
     
     def enter(self):
         if not self.ls:
-            return self.outputLabel.configure(text='You didn\'t enter anything...')
+            return self.outputLabel.configure(text='You didn\'t enter anything...', bg='grey17', fg='red')
         
         try:
             ans = eval(''.join(str(x) for x in self.ls))
@@ -161,7 +161,7 @@ class Window(Frame):
         except ZeroDivisionError:
             return self.outputLabel.configure(text='You cannot divide by zero', bg='grey17', fg='red')
         except SyntaxError:
-            return self.outputLabel.configure(text='SyntaxError', bg='grey17', f@g='red')
+            return self.outputLabel.configure(text='SyntaxError', bg='grey17', fg='red')
         except Exception:
             return self.outputLabel.configure(text='Error', bg='grey17', fg='red')
 
