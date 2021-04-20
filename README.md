@@ -9,4 +9,4 @@ Simple, copy the code into an IDE or text editor (providing you have python inst
 
 Any issues join our [Discord server](https://discord.gg/p5bURjs)
 
-![alt text](https://acatia.needs.rest/knqe1pkq69a.png "image example")
+![alt text](https://cdn.discordapp.com/attachments/763535909433376788/834140996051927070/unknown.png)
