@@ -14,6 +14,8 @@ class Window(Frame):
 
         myFont = font.Font(size='20')
         labelFont = font.Font(size='13')
+        operatorFont = font.Font(size='12')
+        decimalFont = font.Font(size='16')
         
         self.inputLabel = Label(self, text='Input shown here  ', bg='grey17', fg='white')
         self.inputLabel.place(x=95, y=20)
@@ -94,11 +96,39 @@ class Window(Frame):
         buttonMultiply = Button(self, text=' × ', command=self.multiply, bg='grey30', fg='white', borderwidth=0)
         buttonMultiply.place(x=190, y=270)
         buttonMultiply["font"] = myFont
+
+        buttonTwo = Button(self, text=' 2 ', command=self.appendTwo, bg='grey60', fg='black', borderwidth=0)
+        buttonTwo.place(x=70, y=210)
+        buttonTwo["font"] = myFont
+        
+        buttonDecimal = Button(self, text=' . ', command=self.appendDecimal, bg='grey30', fg='white', borderwidth=0, height=1, width=2)
+        buttonDecimal.place(x=250, y=150)
+        buttonDecimal["font"] = myFont
+
+        buttonOpenBracket = Button(self, text=' ( ', command=self.openBracket, bg='grey50', fg='white', borderwidth=0)
+        buttonOpenBracket.place(x=10, y=270)
+        buttonOpenBracket["font"] = operatorFont
+
+        buttonClosedBracket = Button(self, text=' ) ', command=self.closedBracket, bg='grey50', fg='white', borderwidth=0)
+        buttonClosedBracket.place(x=40, y=270)
+        buttonClosedBracket["font"] = operatorFont
     
+    def openBracket(self):
+        self.ls.append('(')
+        self.inputLabel.configure(text=''.join(str(v) for v in self.ls), bg='grey17', fg='white')
+    
+    def closedBracket(self):
+        self.ls.append(')')
+        self.inputLabel.configure(text=''.join(str(v) for v in self.ls), bg='grey17', fg='white')
+
     def add(self):
         self.ls.append('+')
         self.inputLabel.configure(text=''.join(str(v) for v in self.ls), bg='grey17', fg='white')
     
+    def appendDecimal(self):
+        self.ls.append('.')
+        self.inputLabel.configure(text=''.join(str(v) for v in self.ls))
+
     def subtract(self):
         self.ls.append('-')
         self.inputLabel.configure(text=''.join(str(v) for v in self.ls), bg='grey17', fg='white')
@@ -179,6 +209,6 @@ if __name__ == "__main__":
     app.configure(bg='grey17')
     root.wm_title('Calculator')
     root.iconbitmap(r'calc.ico')
-    root.geometry("320x350")
+    root.geometry("320x400")
     root.mainloop()
 
