@@ -1,5 +1,5 @@
 # No libraries need to be imported!
-
+    
 import tkinter as tk
 from tkinter import *
 import tkinter.font as font
@@ -84,7 +84,7 @@ class Window(Frame):
         buttonClear = Button(self, text='Clear', command=self.clearCalc, bg='grey30', fg='white', borderwidth=0)
         buttonClear.place(x=250, y=90)
         buttonClear["font"] = labelFont
-        
+
         buttonSubtract = Button(self, text=' -  ', command=self.subtract, bg='grey30', fg='white', borderwidth=0)
         buttonSubtract.place(x=190, y=150)
         buttonSubtract["font"] = myFont
@@ -124,10 +124,10 @@ class Window(Frame):
     def add(self):
         self.ls.append('+')
         self.inputLabel.configure(text=''.join(str(v) for v in self.ls), bg='grey17', fg='white')
-    
+
     def appendDecimal(self):
         self.ls.append('.')
-        self.inputLabel.configure(text=''.join(str(v) for v in self.ls))
+        self.inputLabel.configure(text=''.join(str(v) for v in self.ls), bg='grey17', fg='white')
 
     def subtract(self):
         self.ls.append('-')
@@ -183,7 +183,7 @@ class Window(Frame):
     
     def enter(self):
         if not self.ls:
-            return self.outputLabel.configure(text='You didn\'t enter anything...', bg='grey17', fg='red')
+            return self.outputLabel.configure(text='You didn\'t enter anything', bg='grey17', fg='red')
         
         try:
             ans = eval(''.join(str(x) for x in self.ls))
@@ -194,9 +194,9 @@ class Window(Frame):
             return self.outputLabel.configure(text='SyntaxError', bg='grey17', fg='red')
         except Exception:
             return self.outputLabel.configure(text='Error', bg='grey17', fg='red')
-
+        
         self.outputLabel.configure(text=ans)
-    
+
     def clearCalc(self):
         self.ls.clear()
         self.inputLabel.configure(text='Input shown here  ', bg='grey17', fg='white')
@@ -208,7 +208,7 @@ if __name__ == "__main__":
     app = Window(root)
     app.configure(bg='grey17')
     root.wm_title('Calculator')
-    root.iconbitmap(r'calc.ico')
+    root.iconbitmap(r'calc.ico') # NOTE - remove this line if you did not clone the GitHub repo.
     root.geometry("320x400")
     root.mainloop()
 
