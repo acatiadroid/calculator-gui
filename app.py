@@ -131,12 +131,10 @@ class Window(Frame):
     def appendOperator(self, op):
         self.ls.append(op)
         self.updateLabel()
-        print(self.ls)
 
     def appendInt(self, number):
         self.ls.append(number)
         self.updateLabel()
-        print(self.ls)
 
     def enter(self):
         if not self.ls:
@@ -304,12 +302,10 @@ class Window(Frame):
     def appendOperator(self, op):
         self.ls.append(op)
         self.updateLabel()
-        print(self.ls)
 
     def appendInt(self, number):
         self.ls.append(number)
         self.updateLabel()
-        print(self.ls)
 
     def enter(self):
         if not self.ls:
