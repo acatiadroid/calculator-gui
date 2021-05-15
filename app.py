@@ -3,7 +3,6 @@ from tkinter import *
 import tkinter.font as font
 
 import os # For checking if the "calc.ico" exists
-from functools import partial
 
 class Window(Frame):
     def __init__(self, master=None):
