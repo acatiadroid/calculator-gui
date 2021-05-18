@@ -3,7 +3,6 @@ from tkinter import *
 import tkinter.font as font
 
 import os # For checking if the "calc.ico" exists
-from functools import partial
 
 class Window(Frame):
     def __init__(self, master=None):
@@ -41,85 +40,85 @@ class Window(Frame):
 
     # Buttons for inputting numbers
 
-        self.buttonNine = Button(self, text=' 9 ', command=lambda: self.appendInt(9), bg='grey60', fg='black', borderwidth=0)
+        self.buttonNine = Button(self, text=' 9 ', command=lambda: self.appendInt(9), bg='grey60', fg='black')
         self.buttonNine.place(x=130, y=90)
         self.buttonNine["font"] = myFont
 
-        self.buttonEight = Button(self, text=' 8 ', command=lambda: self.appendInt(8), bg='grey60', fg='black', borderwidth=0)
+        self.buttonEight = Button(self, text=' 8 ', command=lambda: self.appendInt(8), bg='grey60', fg='black')
         self.buttonEight.place(x=70, y=90)
         self.buttonEight["font"] = myFont
 
-        self.buttonSeven = Button(self, text=' 7 ', command=lambda: self.appendInt(7), bg='grey60', fg='black', borderwidth=0)
+        self.buttonSeven = Button(self, text=' 7 ', command=lambda: self.appendInt(7), bg='grey60', fg='black')
         self.buttonSeven.place(x=10, y=90)
         self.buttonSeven["font"] = myFont
         
-        self.buttonSix = Button(self, text=' 6 ', command=lambda: self.appendInt(6), bg='grey60', fg='black', borderwidth=0)
+        self.buttonSix = Button(self, text=' 6 ', command=lambda: self.appendInt(6), bg='grey60', fg='black')
         self.buttonSix.place(x=130, y=150)
         self.buttonSix["font"] = myFont
 
-        self.buttonFive = Button(self, text=' 5 ', command=lambda: self.appendInt(5), bg='grey60', fg='black', borderwidth=0)
+        self.buttonFive = Button(self, text=' 5 ', command=lambda: self.appendInt(5), bg='grey60', fg='black')
         self.buttonFive.place(x=70, y=150)
         self.buttonFive["font"] = myFont
 
-        self.buttonFour = Button(self, text=' 4 ', command=lambda: self.appendInt(4), bg='grey60', fg='black', borderwidth=0)
+        self.buttonFour = Button(self, text=' 4 ', command=lambda: self.appendInt(4), bg='grey60', fg='black')
         self.buttonFour.place(x=10, y=150)
         self.buttonFour["font"] = myFont
 
-        self.buttonThree = Button(self, text=' 3 ', command=lambda: self.appendInt(3), bg='grey60', fg='black', borderwidth=0)
+        self.buttonThree = Button(self, text=' 3 ', command=lambda: self.appendInt(3), bg='grey60', fg='black')
         self.buttonThree.place(x=130, y=210)
         self.buttonThree["font"] = myFont
 
-        self.buttonTwo = Button(self, text=' 2 ', command=lambda: self.appendInt(2), bg='grey60', fg='black', borderwidth=0)
+        self.buttonTwo = Button(self, text=' 2 ', command=lambda: self.appendInt(2), bg='grey60', fg='black')
         self.buttonTwo.place(x=70, y=210)
         self.buttonTwo["font"] = myFont
 
-        self.buttonOne = Button(self, text=' 1 ', command=lambda: self.appendInt(1), bg='grey60', fg='black', borderwidth=0)
+        self.buttonOne = Button(self, text=' 1 ', command=lambda: self.appendInt(1), bg='grey60', fg='black')
         self.buttonOne.place(x=10, y=210)
         self.buttonOne["font"] = myFont
         
-        self.buttonZero = Button(self, text=' 0 ', command=lambda: self.appendInt(0), bg='grey60', fg='black', borderwidth=0)
+        self.buttonZero = Button(self, text=' 0 ', command=lambda: self.appendInt(0), bg='grey60', fg='black')
         self.buttonZero.place(x=70, y=270)
         self.buttonZero["font"] = myFont
 
 
     # Buttons for inputting operators
 
-        self.buttonAdd = Button(self, text=' + ', command=lambda: self.appendOperator("+"), bg='grey30', fg='white', borderwidth=0)
+        self.buttonAdd = Button(self, text=' + ', command=lambda: self.appendOperator("+"), bg='grey30', fg='white')
         self.buttonAdd.place(x=190, y=90)
         self.buttonAdd["font"] = myFont
 
-        self.buttonSubtract = Button(self, text=' -  ', command=lambda: self.appendOperator("-"), bg='grey30', fg='white', borderwidth=0)
+        self.buttonSubtract = Button(self, text=' -  ', command=lambda: self.appendOperator("-"), bg='grey30', fg='white')
         self.buttonSubtract.place(x=190, y=150)
         self.buttonSubtract["font"] = myFont
 
-        self.buttonDivide = Button(self, text=' ÷ ', command=lambda: self.appendOperator("/"), bg='grey30', fg='white', borderwidth=0)
+        self.buttonDivide = Button(self, text=' ÷ ', command=lambda: self.appendOperator("/"), bg='grey30', fg='white')
         self.buttonDivide.place(x=190, y=210)
         self.buttonDivide["font"] = myFont
 
-        self.buttonMultiply = Button(self, text=' × ', command=lambda: self.appendOperator("*"), bg='grey30', fg='white', borderwidth=0)
+        self.buttonMultiply = Button(self, text=' × ', command=lambda: self.appendOperator("*"), bg='grey30', fg='white')
         self.buttonMultiply.place(x=190, y=270)
         self.buttonMultiply["font"] = myFont
         
-        self.buttonDecimal = Button(self, text=' . ', command=lambda: self.appendOperator("."), bg='grey30', fg='white', borderwidth=0, height=1, width=2)
+        self.buttonDecimal = Button(self, text=' . ', command=lambda: self.appendOperator("."), bg='grey30', fg='white', height=1, width=2)
         self.buttonDecimal.place(x=250, y=150)
         self.buttonDecimal["font"] = myFont
 
-        self.buttonOpenBracket = Button(self, text=' ( ', command=lambda: self.appendOperator("("), bg='grey50', fg='white', borderwidth=0)
+        self.buttonOpenBracket = Button(self, text=' ( ', command=lambda: self.appendOperator("("), bg='grey50', fg='white')
         self.buttonOpenBracket.place(x=10, y=270)
         self.buttonOpenBracket["font"] = operatorFont
 
-        self.buttonClosedBracket = Button(self, text=' ) ', command=lambda: self.appendOperator(")"), bg='grey50', fg='white', borderwidth=0)
+        self.buttonClosedBracket = Button(self, text=' ) ', command=lambda: self.appendOperator(")"), bg='grey50', fg='white')
         self.buttonClosedBracket.place(x=40, y=270)
         self.buttonClosedBracket["font"] = operatorFont
 
         
     # Buttons for calculator functions
 
-        self.buttonClear = Button(self, text='Clear', command=self.clearCalc, bg='grey30', fg='white', borderwidth=0)
+        self.buttonClear = Button(self, text='Clear', command=self.clearCalc, bg='grey30', fg='white')
         self.buttonClear.place(x=250, y=90)
         self.buttonClear["font"] = labelFont
 
-        self.buttonEnter = Button(self, text=' = ', command=self.enter, bg='LightBlue3', fg='black', borderwidth=0)
+        self.buttonEnter = Button(self, text=' = ', command=self.enter, bg='LightBlue3', fg='black')
         self.buttonEnter.place(x=130, y=270)
         self.buttonEnter["font"] = myFont
 
@@ -168,4 +167,3 @@ if __name__ == "__main__":
         root.iconbitmap(r'calc.ico')
     root.geometry("320x400")
     root.mainloop()
-
